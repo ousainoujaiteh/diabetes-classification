@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="preadmin/hospital/assets/img/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/fullcalendar.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/bootstrap-datetimepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/plugins/morris/morris.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/css/style.css')}}">
+    <!--[if lt IE 9]>
+		<script src="{{ url_for('static',filename='assets/js/html5shiv.min.js')}}"></script>
+		<script src="{{ url_for('static',filename='assets/js/respond.min.js')}}"></script>
+	<![endif]-->
+
+    {% endblock %}
+</head>
+
+<body>
+    <div class="main-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- /main-wrapper -->
+
+
+
+     <script type="text/javascript" src="{{ url_for('static',filename='assets/js/jquery-3.2.1.min.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='assets/js/popper.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/jquery.slimscroll.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/slidemenu.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/select2.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/moment.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/bootstrap-datetimepicker.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/Chart.bundle.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='assets/js/app.js')}}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type = "text/javascript" src = "{{ url_for('static', filename='js/highcharts.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename='js/exporting.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename='js/export-data.js') }}" ></script>
+
+    <script type = "text/javascript" src = "{{ url_for('static', filename='js/scripts.js') }}" ></script>
+</body>
+</html>

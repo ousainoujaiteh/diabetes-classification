@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Create Classification{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+        {% include 'header.html' %}
+        {% include 'sidebar.html' %}
+        <div class="page-wrapper">
+            <div class="content">
+
+                <div class="row">
+                   <div class="col-md-12">
+                       <div class="card-box">
+                            <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    <h4 class="page-title">Add Prediction</h4>
+                                </div>
+                            </div>
+                               <!-- /row -->
+                           <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    <form method="post" action="/handle_upload" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Upload File <span class="text-danger">*</span></label>
+                                                    <div class="upload-input">
+                                                            <input type="file" name="file" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-t-20 text-center">
+                                            <button type="submit" class="btn btn-primary submit-btn">Predict</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                           <!--/row -->
+                       </div>
+                       <!-- /card -->
+                   </div>
+                    <!-- /col-md-12 -->
+                </div>
+                <!-- /chart -->
+            </div>
+            <!-- /content -->
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+{% endblock %}

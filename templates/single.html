@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}Create Classification{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+        {% include 'header.html' %}
+        {% include 'sidebar.html' %}
+        <div class="page-wrapper">
+            <div class="content">
+
+                <div class="row">
+                   <div class="col-md-12">
+                       <div class="card-box">
+                            <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    <h4 class="page-title">Add Prediction</h4>
+                                </div>
+                            </div>
+                               <!-- /row -->
+                           <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form action="/handle_single" method="post">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>No Pregnancy <span class="text-danger">*</span></label>
+                                        <input class="form-control" name="num_preg">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Gluscose Concentration</label>
+                                        <input class="form-control" name="glucose_conc">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Diastolic DP <span class="text-danger">*</span></label>
+                                        <input class="form-control" name="diastolic_bp">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Thickness <span class="text-danger">*</span></label>
+                                        <input class="form-control" name="thickness">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Insulin</label>
+                                        <input class="form-control" name="insulin">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>BMI</label>
+                                        <input class="form-control" name="bmi">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Diabetes Prediction <span class="text-danger">*</span></label>
+                                        <input class="form-control"  name="diab_pred">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Age</label>
+                                        <input class="form-control" name="age">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Skin</label>
+                                        <input class="form-control" name="skin">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn">Predict</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                       </div>
+                       <!-- /card -->
+                   </div>
+                    <!-- /col-md-12 -->
+                </div>
+                <!-- /chart -->
+            </div>
+            <!-- /content -->
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+{% endblock %}

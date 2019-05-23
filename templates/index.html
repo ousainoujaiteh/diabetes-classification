@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+        {% include 'header.html' %}
+        {% include 'sidebar.html' %}
+        <div class="page-wrapper">
+            <div class="content">
+
+                <div class="row">
+                   <div class="col-md-12">
+                       <div class="card-box">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4>Settings</h4>
+                                </div>
+                                <!-- /col-md-6 -->
+                                <div class="col-md-4">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            New Classification
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/single">Single</a>
+                                             <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="/upload">Upload</a>
+
+                                        </div>
+                                    </div>
+                                    <!-- /btn-group -->
+                                    <a href="/predict" class="btn btn-success">Suggest</a>
+                                    <a href="/train" class="btn btn-danger">Train Model</a>
+                                </div>
+                                <!-- /col-md-6 -->
+                            </div>
+                           <!-- /row -->
+
+                           <!--<div class="row" style="margin-top: 20px;">-->
+                               <!--<div class="table-responsive">-->
+                                    <!--<table class="datatable table table-striped">-->
+                                        <!--<thead>-->
+                                            <!--<tr>-->
+                                                <!--<th>Index</th>-->
+                                                <!--<th>Value</th>-->
+                                                <!--<th>Result</th>-->
+                                            <!--</tr>-->
+                                        <!--</thead>-->
+                                        <!--<tbody>-->
+                                        <!--{% for value in data %}-->
+                                            <!--<tr>-->
+                                                <!--<td>{{ loop.index }}</td>-->
+                                                <!--<td>{{ value }}</td>-->
+                                                <!--<td>-->
+                                                    <!--<button class="btn btn-xs btn-{{ 'success' if value == 1.0 else 'danger' }}">-->
+                                                        <!--<i class="fa fa-{{ 'check' if value == 1.0 else 'close' }}"></i>-->
+                                                    <!--</button>-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                        <!--{% endfor %}-->
+                                        <!--</tbody>-->
+                                    <!--</table>-->
+                                   <!--&lt;!&ndash; /table &ndash;&gt;-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--&lt;!&ndash; /row &ndash;&gt;-->
+
+                           <div class="row" style="margin-top: 20px;">
+                               <div class="table-responsive">
+                                    <table class="datatable table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Num Pregnancy</th>
+                                                <th>Gluscose Concentration</th>
+                                                <th>Diastolic DP</th>
+                                                <th>Thickness</th>
+                                                <th>Insulin</th>
+                                                <th>BMI</th>
+                                                <th>Diabetes Prediction</th>
+                                                <th>Age</th>
+                                                <th>Result</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--{% for d in final %}-->
+                                                <!--<tr>-->
+                                                    <!--{% for f in d %}-->
+                                                    <!--<td>{{ f }}</td>-->
+                                                    <!--{% endfor  %}-->
+                                                    <!--<td></td>-->
+                                                <!--</tr>-->
+                                            <!--{% endfor %}-->
+
+                                            {% for d in data %}
+                                               <tr>
+                                                   {% for l in d['values'] %}
+                                                        <td>{{ l }}</td>
+                                                   {% endfor %}
+                                                   <td>
+                                                       <button class="btn btn-xs btn-{{ 'success' if d['pred'] == 1.0 else 'danger' }}">
+                                                        <i class="fa fa-{{ 'check' if d['pred'] == 1.0 else 'close' }}"></i>
+                                                    </button>
+                                                   </td>
+                                               </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                   <!-- /table -->
+                               </div>
+                           </div>
+                           <!-- /row -->
+                       </div>
+                       <!-- /card -->
+                   </div>
+                    <!-- /col-md-12 -->
+                </div>
+                <!-- /chart -->
+            </div>
+            <!-- /content -->
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+{% endblock %}
